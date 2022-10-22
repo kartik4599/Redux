@@ -7,9 +7,27 @@ const counterReducer = (state = { counter: 0 }, action) => {
     };
   }
 
+  if (action.type === "increment5") {
+    return {
+      counter: state.counter + 5,
+    };
+  }
+
   if (action.type === "decrement") {
     return {
       counter: state.counter - 1,
+    };
+  }
+
+  if (action.type === "decrement5") {
+    return {
+      counter: state.counter - 5,
+    };
+  }
+
+  if (action.type === "reset") {
+    return {
+      counter: 0,
     };
   }
 
@@ -21,4 +39,3 @@ const counterReducer = (state = { counter: 0 }, action) => {
 const store = createStore(counterReducer);
 
 export default store;
-
